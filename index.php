@@ -8,6 +8,39 @@
 
 	<body>
 	
+		<?php
+			session_start();
+			if(isset($_SESSION['userID']))
+			{
+				$userid=$_SESSION['userID'];
+				$conn=new PDO('mysql:host=localhost;dbname=scdb;charset=utf8', 'root', '');
+				$sql="SELECT * FROM `users` WHERE `userID`='$userid'" ;
+				$result=$conn->query($sql) or  die("failed");
+			
+				$row = $result->fetch();
+				switch ($row['role']) {
+							case "lecturer":
+								header( "Location: php/lecturerhome.php");
+								break;
+							case "student":
+								header("Location: php/studenthome.php");
+								break;
+							case "studAssistant":
+								header(  "Location: php/studAssistanthome.php");
+								break;
+							case "secretary":
+								header(  "Location: php/secretaryhome.php");
+								break;
+							case "admin":
+								header(  "Location: php/administrationhome.php");
+								break;
+						}
+			}
+			else
+			{
+				session_destroy();
+			}
+		?>
 		<h3>Вход в информационната система:</h3>
 	
 		<form method="post" action="index.php">

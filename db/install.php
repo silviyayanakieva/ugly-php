@@ -108,14 +108,14 @@ ALTER TABLE `lecturerdata`
 //entering data
 	$usernames=array("pivanov","gtgeorgiev","kmarinova","ivanovar","administrator","mariavv","steladim","ivanovivan"); 
 	$names=array("доц. Петър Иванов","Георги Георгиев","Калина Маринова","Райна Иванова","Администрация","доц. Мария Владимирова","Стела Димитрова","Иван Иванов");
-	$passwds=array(password_hash('parola', PASSWORD_DEFAULT),
-					 password_hash('kalinka', PASSWORD_DEFAULT),
-					 password_hash('123puhi123', PASSWORD_DEFAULT),
-					 password_hash('sufmikancelariq', PASSWORD_DEFAULT),
+	$passwds=array(password_hash('lecturer1', PASSWORD_DEFAULT),
+					 password_hash('student1', PASSWORD_DEFAULT),
+					 password_hash('assistant1', PASSWORD_DEFAULT),
+					 password_hash('secretary1', PASSWORD_DEFAULT),
 					 password_hash('otednododevet', PASSWORD_DEFAULT),
-					 password_hash('smile55', PASSWORD_DEFAULT),
-					 password_hash('kartof', PASSWORD_DEFAULT),
-					  password_hash('ivan', PASSWORD_DEFAULT)); 
+					 password_hash('lecturer2', PASSWORD_DEFAULT),
+					 password_hash('student2', PASSWORD_DEFAULT),
+					 password_hash('assistant2', PASSWORD_DEFAULT)); 
 	$roles=array("lecturer","student","studAssistant","secretary","admin","lecturer","student","studAssistant");
 	
 	for($i=0;$i<=7;$i++)

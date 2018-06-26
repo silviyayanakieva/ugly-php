@@ -8,7 +8,11 @@
 	<body>
 	<h3>Student Calendar</h3>
 	
-		<?php include "home.php";?>
+		<?php
+			include "home.php";
+			if($_SESSION['role']!='secretary') {header ("Location: redirect.php");}
+			
+		?>
 		<form method="post" action="logout.php">
 				<input type="submit" name="logout" id="logoutbutton" value="Изход"/>
 		</form>

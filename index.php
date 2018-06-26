@@ -71,6 +71,7 @@
 							$userid=$row['userID'];
 							$_SESSION['userID']=$userid;
 							$_SESSION['names']=$row['names'];
+							$_SESSION['role']=$row['role'];
 							switch ($row['role']) {
 										case "lecturer":
 											header( "Location: php/lecturerhome.php");

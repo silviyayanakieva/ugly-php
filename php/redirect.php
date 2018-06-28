@@ -10,21 +10,21 @@
 		$row=$result->fetch();						
 			switch ($row['role']) {
 				case "lecturer":
-					header( "Location: lecturerhome.php");
+					header( "Location: lecturerHome.php");
 					break;
 				case "student":
-					header("Location: studenthome.php");
+					header("Location: studentHome.php");
 					break;
 				case "studAssistant":
-					header(  "Location: studAssistanthome.php");
+					header(  "Location: studAssistantHome.php");
 					break;
 				case "secretary":
-					header(  "Location: secretaryhome.php");
+					header(  "Location: secretaryHome.php");
 					break;
 				case "admin":
-					header(  "Location: administrationhome.php");
+					header(  "Location: administrationHome.php");
 					break;
 			}
 	}		
-		
+		header(  "Location:../index.php");
 ?>

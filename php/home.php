@@ -12,7 +12,7 @@
 			$result=$conn->query($sql);
 			$row = $result->fetch();
 			$name=$row['names'];
-			echo "<h5>Добре дошли, $name !</h5>";
+			echo "<h4>Добре дошли, $name !</h4>";
 			
 			
 	?>

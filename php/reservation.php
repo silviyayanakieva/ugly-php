@@ -1,17 +1,18 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		 <title>Student Calendar</title>
+		<link rel="stylesheet" type="text/css" href="../style/style.css">
+		<title>Student Calendar</title>
 	</head>
 	
-	<body>
-	<h3>Student Calendar</h3>
+	<body  class="lecturerbody">
+	<h3 class="lecturerheader">Student Calendar</h3>
 	
 		<?php include "home.php";?>
 		<form method="post" action="logout.php">
-				<input type="submit" name="logout" id="logoutbutton" value="Изход"/>
+				<input class="lecturerbutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
 		</form>
-		<a href="redirect.php">Начало</a>
+		<a href="redirect.php"><< Начало</a>
 		
 		<h5>Запазване на зала за занятия</h5>
 		
@@ -27,7 +28,7 @@
 			<input type="text" name="timefrom" id="timefrom">
 			<label for="timeto">До (чч:мм):</label>
 			<input type="text"name="timeto" id="timeto">
-			<input type="submit" value="Изпрати заявка">
+			<input class="lecturerbutton" type="submit" value="Изпрати заявка">
 		</form>
 		
 		<?php

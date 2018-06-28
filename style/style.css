@@ -58,6 +58,10 @@ input{
 	margin-bottom: 1%;
 }
 
+select{
+	margin-bottom:1%;
+}
+
 .lecturerbutton{
 	background-color: #254941;
 	color:white;

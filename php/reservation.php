@@ -21,13 +21,13 @@
 			  <option value="auditorium">Лекционна</option>
 			  <option value="seminar">Семинарна</option>
 			  <option value="computer">Компютърен кабинет</option>
-			</select>
+			</select><br>
 			<label for="date">Дата:</label>
-			<input type="date" name="date" id="date">
+			<input type="date" name="date" id="date"><br>
 			<label for="timefrom">От (чч:мм):</label>
-			<input type="text" name="timefrom" id="timefrom">
+			<input type="text" name="timefrom" id="timefrom"><br>
 			<label for="timeto">До (чч:мм):</label>
-			<input type="text"name="timeto" id="timeto">
+			<input type="text"name="timeto" id="timeto"><br>
 			<input class="lecturerbutton" type="submit" value="Изпрати заявка">
 		</form>
 		

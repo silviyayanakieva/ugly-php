@@ -1,0 +1,83 @@
+ .studentbody{
+	background-color: #f9e3a9;
+}
+ .lecturerbody{
+	background-color: #def7ef;
+}
+ .secretarybody{
+	background-color: #f7dee8;
+}
+
+.lecturerheader{
+	background-color:#43a888;
+}
+.studentheader{
+	background-color:#f2a43c;
+}
+.secretaryheader{
+	background-color:#99546f;
+}
+
+h3{
+	
+	margin-top: 0%;
+    padding: 1%;
+}
+
+h4{
+	margin-bottom:2%;
+}
+
+#logoutbutton{
+	position: absolute; right: 10%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+padding-top:1%;
+padding-bottom:1%;
+}
+
+a{
+	display:block;
+	margin-bottom: 1%;
+	margin-top: 1%;
+	color:black;
+}
+
+td > a { 
+    font-style: italic;
+}
+
+input{
+	display: inline-block;
+	margin-bottom: 1%;
+}
+
+.lecturerbutton{
+	background-color: #254941;
+	color:white;
+	border: solid 1px;
+	padding: 0.5% 2%;
+	border-radius: 5px;
+}
+
+.studentbutton{
+	background-color: #d37a04;
+	color:white;
+	border: solid 1px;
+	padding: 0.5% 2%;
+	border-radius: 5px;
+}
+
+.secretarybutton{
+	background-color: #773d54;
+	color:white;
+	border: solid 1px;
+	padding: 0.5% 2%;
+	border-radius: 5px;
+}

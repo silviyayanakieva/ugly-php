@@ -3,7 +3,50 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		 <title>Вход в системата</title>
+		<style>
+	
+	form {
+		margin-left:30%;
+		background-color:#d3fff3;
+		border: 3px solid #8aa39c;
+		width:40%;
+		padding: 2% 1%;
+	}
+	p{
+		color:red;
+	}
+
+	input{
+		width: 90%;
+		padding: 12px 20px;
+		margin: 5% 3% ;
+		display: inline-block;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+	}
+	
+	label{
+		margin-left: 5%;
+	}
+	
+	button {
+		background-color: #33697a;
+		color: white;
+		padding: 2% 7%;	
+		border: none;
+		border-radius: 3%;
+		height: 10%;
+		width: 80%;
+		margin-left: 10%;
+		margin-bottom: 5%;
+	}
+
+	button:hover {
+		opacity: 0.8;
+	}
+
+</style>
+		<title>Вход в системата</title>
 	</head>
 
 	<body>
@@ -41,16 +84,16 @@
 				session_destroy();
 			}
 		?>
-		<h3>Вход в информационната система:</h3>
+		<h3 align="center">Student Calendar</h3>
+		<h3 align="center">Вход в информационната система:</h3>
 	
 		<form method="post" action="index.php">
 		
-			<label> Потребителско име:
-				<input type="text" name="usrname">
-			</label>
-			<label> Парола:
-				<input type="password" name="passwd" >
-			</label>
+			<label for="usrnm"> Потребителско име:</label>
+				<input type="text" id="usrnm" name="usrname"><br>			
+			<label for="pswd"> Парола:</label>
+				<input type="password" id="pswd" name="passwd" >
+			
 			<button> Влез </button>
 		</form>
 		
@@ -92,7 +135,7 @@
 						}
 						else
 						{ 
-							echo "Грешно потребителско име или парола!";
+							echo '<p align="center">Грешно потребителско име или парола!</p>';
 						}
 				}
 		?>

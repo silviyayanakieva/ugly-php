@@ -9,20 +9,22 @@
 	<body  class="studentbody">
 	<h3 class="studentheader">Student Calendar</h3>
 	
+		<form method="post" action="logout.php">
+				<input class="studentbutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
+		</form>
+		
 		<?php
 			include "home.php";
 			if($_SESSION['role']!='studAssistant') {header ("Location: redirect.php");}
 		?>
-		<form method="post" action="logout.php">
-				<input type="submit" name="logout" id="logoutbutton" value="Изход"/>
-		</form>
+		
 			
 		<form action="studAssistantHome.php" method="get">
 			<h5>Покажи: </h5>
 			<input type="radio" name="radio" value="allelectives">Списък с всички избираеми <br>
 			<input type="radio" name="radio" value="enrolledelectives">Списък с избираемите, в които съм записан/а<br>
 			<input type="radio" name="radio" value="assisting">Списък с избираемите, в които съм асистент<br>
-			<input type="submit" name="submit" value="Покажи" />
+			<input class="studentbutton" type="submit" name="submit" value="Покажи" />
 		</form>
 
 			<?php
@@ -91,7 +93,7 @@
 			?>
 			
 			<form action="studAssistantHome.php" method="post">
-				<input type="submit" name="hide" value="Скрий" />
+				<input class="studentbutton" type="submit" name="hide" value="Скрий" />
 			</form>
 			
 			<?php

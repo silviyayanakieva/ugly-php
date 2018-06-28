@@ -7,13 +7,14 @@
 	<body class="secretarybody">
 		<h3 class="secretaryheader">Student Calendar</h3>
 		
+		<form method="post" action="logout.php">
+				<input class="secretarybutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
+		</form>
 			<?php
 				include "home.php";
 				if($_SESSION['role']!='admin') {header ("Location: ../redirect.php");}			
 			?>
-			<form method="post" action="logout.php">
-				<input class="secretarybutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
-			</form>
+			
 			<a href="admin/addUser.php">Добавяне на потребител >></a>
 			<a href="admin/editUser.php">Редактиране на данни на потребител >></a>
 			<a href="admin/addElective.php">Добавяне на избираем предмет >></a>

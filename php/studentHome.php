@@ -9,14 +9,16 @@
 	<body  class="studentbody">
 	<h3 class="studentheader">Student Calendar</h3>
 	
+		<form method="post" action="logout.php">
+				<input class="studentbutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
+		</form>
+		
 		<?php
 			include "home.php";
 			if($_SESSION['role']!='student') {header ("Location: redirect.php");}
 			
 		?>
-		<form method="post" action="logout.php">
-				<input class="studentbutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
-		</form>
+		
 			
 		<form action="studentHome.php" method="get">
 		<h5>Покажи: </h5>

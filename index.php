@@ -3,49 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<style>
-	
-	form {
-		margin-left:30%;
-		background-color:#d3fff3;
-		border: 3px solid #8aa39c;
-		width:40%;
-		padding: 2% 1%;
-	}
-	p{
-		color:red;
-	}
-
-	input{
-		width: 90%;
-		padding: 12px 20px;
-		margin: 5% 3% ;
-		display: inline-block;
-		border: 1px solid #ccc;
-		box-sizing: border-box;
-	}
-	
-	label{
-		margin-left: 5%;
-	}
-	
-	button {
-		background-color: #33697a;
-		color: white;
-		padding: 2% 7%;	
-		border: none;
-		border-radius: 3%;
-		height: 10%;
-		width: 80%;
-		margin-left: 10%;
-		margin-bottom: 5%;
-	}
-
-	button:hover {
-		opacity: 0.8;
-	}
-
-</style>
+		<link rel="stylesheet" type="text/css" href="style/login.css">
 		<title>Вход в системата</title>
 	</head>
 
@@ -94,8 +52,20 @@
 			<label for="pswd"> Парола:</label>
 				<input type="password" id="pswd" name="passwd" >
 			
-			<button> Влез </button>
+			<input class="button" type="submit" value="Вход" onclick="logcheck()">
 		</form>
+		
+		<script> 
+		function logcheck(){
+			var un=document.getElementById("usrnm").value;
+			var pw=document.getElementById("pswd").value;
+			if(un==""||pw=="")
+			{
+				alert("Грешно потребителско име или парола!");
+			}
+		}
+		
+		</script>
 		
 		<?php
 			if ($_POST){
@@ -115,6 +85,7 @@
 							$_SESSION['userID']=$userid;
 							$_SESSION['names']=$row['names'];
 							$_SESSION['role']=$row['role'];
+							$_SESSION['last_active']=time();
 							switch ($row['role']) {
 										case "lecturer":
 											header( "Location: php/lecturerhome.php");
@@ -132,11 +103,14 @@
 											header(  "Location: php/administrationhome.php");
 											break;
 									}
+									
 						}
 						else
 						{ 
+							
 							echo '<p align="center">Грешно потребителско име или парола!</p>';
 						}
+						
 				}
 		?>
 		</body>

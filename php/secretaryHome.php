@@ -94,7 +94,7 @@
 					WHERE `reservationID`='$reservationnumber'";
 					
 				$conn->query($sql) or die('Неуспешнa промяна на заявка заявка! Опитайте отново.');
-				
+				header("Refresh:0");
 			}
 		
 		?>

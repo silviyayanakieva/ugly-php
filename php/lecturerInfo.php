@@ -6,11 +6,11 @@
 	</head>
 	
 	<body  class="studentbody">
-	<h3>Student Calendar</h3>
+	<h3 class="studentheader">Student Calendar</h3>
 	
 		<?php
 			include "home.php"; ?>
-	<a href="redirect.php">Начало</a>
+	<a href="redirect.php"><< Начало</a>
 	<h3>Информация за преподавател:</h3>
 	<?php
 	$lecturerid=$_GET['lecturer'];

@@ -22,10 +22,12 @@
 		<form action="lecturerhome.php" method="get">
 			<h5>Покажи:</h5>
 			<input type="radio" name="radio" value="allstudents">Списък със студенти, записали водени от мен избираеми <br>
-			<input type="radio" name="radio" value="allelectives">Списък с избираеми, водени от мен  <br>
+			<input type="radio" name="radio" value="allelectives">Списък с водени от мен избираеми  <br>
 			<input class="lecturerbutton" type="submit" name="submit" value="Покажи" />
 		</form>
-	<?php
+		
+		<?php
+			
 			if (isset($_GET['submit'])) {
 				if(isset($_GET['radio']))
 				{
@@ -53,13 +55,14 @@
 						$sql="SELECT * FROM `electives` WHERE `lecturerID`=$lecturerid" ;
 			
 						$result=$conn->query($sql);
-						echo "<table> <tr> <th>Избираема</th> <th>Кредити</th> </tr>";
+						echo "<table> <tr> <th>Избираема</th> <th>Асистент</th> <th>Кредити</th> </tr>";
 						while ($row = $result->fetch())
 						{							
 							$name=$row['name'];
+							$assistant=$row['assistantname'];
 							$credits=$row['credits'];
 
-							echo"<tr><td>$name</td><td>$credits</td></tr>";
+							echo"<tr><td>$name</td><td>$assistant</td><td>$credits</td></tr>";
 						};
 						echo"</table>";
 					}
@@ -70,6 +73,7 @@
 			<form action="lecturerHome.php" method="post">
 				<input class="lecturerbutton" type="submit" name="hide" value="Скрий" />
 			</form>
+
 			
 			<?php
 			if(!empty($_POST['hide']))

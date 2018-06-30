@@ -104,6 +104,7 @@
 			?>
 			
 			<a href="reservation.php">Запазване на зала за занятия >></a>
+			<a href="reservationStatus.php">Преглед на състоянието на подадените заявки>></a>
 	
 </body>
 </html>

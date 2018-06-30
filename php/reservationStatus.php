@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -8,7 +9,9 @@
 	<body  class="lecturerbody">
 	<h3 class="lecturerheader">Student Calendar</h3>
 	
-		<?php include "home.php";?>
+		<?php include "home.php";
+		if(($_SESSION['role']!='studAssistant')&&($_SESSION['role']!='lecturer')) {header ("Location: redirect.php");}		
+		?>
 		<form method="post" action="logout.php">
 				<input class="lecturerbutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
 		</form>

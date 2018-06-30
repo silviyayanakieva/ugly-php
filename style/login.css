@@ -1,37 +1,42 @@
-/* Bordered form */
-form {
-    border: 3px solid #f1f1f1;
+
 	
-}
+	form {
+		margin-left:30%;
+		background-color:#d3fff3;
+		border: 3px solid #8aa39c;
+		width:40%;
+		padding: 2% 1%;
+	}
+	p{
+		color:red;
+	}
 
-/* Full-width inputs */
-input{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+	input{
+		width: 90%;
+		padding: 12px 20px;
+		margin: 5% 3% ;
+		display: inline-block;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+	}
+	
+	label{
+		margin-left: 5%;
+	}
+	
+	.button {
+		background-color: #33697a;
+		color: white;
+		padding: 2% 7%;	
+		border: none;
+		border-radius: 3%;
+		height: 10%;
+		width: 80%;
+		margin-left: 10%;
+		margin-bottom: 5%;
+	}
 
-/* Set a style for all buttons */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* Add a hover effect for buttons */
-button:hover {
-    opacity: 0.8;
-}
-
-/* Add padding to containers */
-.container {
-    padding: 16px;
-}
+	.button:hover {
+		opacity: 0.8;
+	}
 

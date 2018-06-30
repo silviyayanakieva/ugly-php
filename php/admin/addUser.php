@@ -15,7 +15,7 @@
 			<form method="post" action="../logout.php">
 				<input class="secretarybutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
 			</form>
-			<a href="../redirect.php">Начало</a>
+			<a href="../redirect.php"><< Начало</a>
 			<h3>Добавяне на потребител </h3>
 			<form method="post" action="addUser.php">
 				<label for="username">Потребителско име:</label>
@@ -25,14 +25,31 @@
 				<label for="password">Парола: </label>
 					<input type="text" name="password" id="password"><br>
 				<label for="role">Роля:</label>
-				<select name="role">
+				<select name="role" id="role">
 				    <option value="lecturer">Лектор</option>
 				    <option value="student">Студент</option>
 				    <option value="studAssistant">Студент-асистет</option>
 				    <option value="secretary">Секретар</option>
 				</select><br>
-				<input class="secretarybutton" type="submit" value="Добави">
+				<input class="secretarybutton" type="submit" value="Добави" onclick="message()" >
 			</form>
+			<script>
+					function message(){
+						var username=document.getElementById("username").value;
+						var names=document.getElementById("names").value;
+						var password=document.getElementById("password").value;
+						var role=document.getElementById("role").value;
+						if(username==""||names==""||password==""||role=="")
+						{
+							alert("Всички полета са задължителни!");
+						}
+						else
+						{
+							alert("Потребителят е записан!");
+						}
+				
+					}
+			</script>
 	</body>
 </html>
 
@@ -46,10 +63,16 @@
 		$passwordhash=password_hash($password,PASSWORD_DEFAULT);
 		$role=$_POST['role'];
 		
+		if($username!=""&&$password!=""){
+		
 		$conn=new PDO("mysql:host=localhost;dbname=scdb;charset=utf8",'root','');		
 		$sql="INSERT INTO `users`(`username`,`names`,`password`,`role`) 
 				VALUES ('$username','$names','$passwordhash','$role')";
 				$conn->query($sql) or die("Неуспешно въведен потребител");
+			
+		}
+		
+		
 		
 	}
 ?>

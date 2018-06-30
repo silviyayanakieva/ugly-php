@@ -15,6 +15,8 @@
 			<form method="post" action="../logout.php">
 				<input class="secretarybutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
 			</form>
+			
+			<a href="../redirect.php"> <<Начало</a>
 
 			<h3>Редактиране на данни на потребител</h3>
 			<form method="post" action="editUser.php">

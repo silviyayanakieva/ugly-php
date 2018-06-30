@@ -15,7 +15,7 @@
 			<form method="post" action="../logout.php">
 				<input class="secretarybutton" type="submit" name="logout" id="logoutbutton" value="Изход"/>
 			</form>
-			<a href="../redirect.php">Начало</a>
+			<a href="../redirect.php"> <<Начало</a>
 			<h3>Добавяне на избираем предмет </h3>
 			<form method="post" action="addElective.php">
 				<label for="electivename">Име на избираемия предмет:</label>
@@ -26,7 +26,24 @@
 					<input type="text" name="assistantid" id="assistantid"><br>
 				<label for="credits">Брой кредити:</label>
 					<input type="text" name="credits" id="credits"><br>
-				<input class="secretarybutton" type="submit" value="Добави"><br>
+				<input class="secretarybutton" type="submit" value="Добави" onclick="message()"><br>
+				<script>
+					function message(){
+						var name=document.getElementById("electivename").value;
+						var lectid=document.getElementById("lecturerid").value;
+						var assistid=document.getElementById("assistantid").value;
+						var credits=document.getElementById("credits").value;
+						if(name==""||lectid==""||assistid==""||credits=="")
+						{
+							alert("Всички полета са задължителни!");
+						}
+						else
+						{
+							alert("Избираемата е записана!");
+						}
+				
+					}
+				</script>
 			</form>
 
 	</body>
@@ -42,19 +59,24 @@
 		$credits=$_POST['credits'];
 		
 		$conn=new PDO("mysql:host=localhost;dbname=scdb;charset=utf8",'root','');
-		$sql="SELECT * from `users` WHERE `userID`=$lecturerid";
-		$result=$conn->query($sql);
-		$row=$result->fetch();
-		$lecturername=$row['names'];
 		
-		$sql="SELECT * from `users` WHERE `userID`=$assistantid";
-		$result=$conn->query($sql);
-		$row=$result->fetch();
-		$assistantname=$row['names'];
+		if($lecturerid!=""){
+			$sql="SELECT * from `users` WHERE `userID`=$lecturerid";
+			$result=$conn->query($sql);
+			$row=$result->fetch();
+			$lecturername=$row['names'];
+		}
+		if($assistantid!=""){
+			$sql="SELECT * from `users` WHERE `userID`=$assistantid";
+			$result=$conn->query($sql);
+			$row=$result->fetch();
+			$assistantname=$row['names'];
+		}
 		
-		$sql="INSERT INTO `electives`(`name`,`lecturerID`,`lecturername`,`assistantID`,`assistantname`) 
+		if($assistantid!=""&&$lecturerid!=""){	
+			$sql="INSERT INTO `electives`(`name`,`lecturerID`,`lecturername`,`assistantID`,`assistantname`) 
 				VALUES ('$electivename','$lecturerid','$lecturername','$assistantid','$assistantname')";
 				$conn->query($sql) or die("Неуспешно въведена избираема");
-		
+		}
 	}
 ?>
